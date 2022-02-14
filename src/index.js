@@ -66,7 +66,7 @@ app.post('/api/events/:date',(req,res)=>{
 app.get('/api/names',(req,res)=>{
     con.query('select * from user',(err,result)=>{
         res.status(200).json({result});
-        console.log(result)
+        //console.log(result)
     })
 })
 
@@ -79,7 +79,7 @@ app.post('/api/names',(req,res)=>{
     con.query(sql,(err,result)=>{
         
         res.status(200).json({msg: "Name Added"});
-        console.log((sql))
+        //console.log((sql))
     })
     // console.log(sql)
 })
