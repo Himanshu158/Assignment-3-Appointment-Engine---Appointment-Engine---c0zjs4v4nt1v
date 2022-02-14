@@ -12,7 +12,7 @@ const  con  = require('./connector');
 
 app.get('/api/events',(req,res)=>{
     con.query('select * from events',(err,result)=>{
-        res.status(200).json({result});
+        res.status(200).json(result.length);
         //console.log(result)
     })
 })
@@ -89,3 +89,4 @@ app.listen(port, () =>{
     console.log(`App listening on port ${port}!`)})
 
 module.exports = app;
+
