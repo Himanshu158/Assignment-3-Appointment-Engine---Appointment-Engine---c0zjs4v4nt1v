@@ -12,9 +12,8 @@ const  con  = require('./connector');
 
 app.get('/api/events',(req,res)=>{
     con.query('select * from events',(err,result)=>{
-        let a=result.length;
-        console.log(a);
-        res.status(200).json({result:a});
+        res.status(200);
+        res.send(result)
         //console.log(result)
     })
 })
@@ -91,3 +90,4 @@ app.listen(port, () =>{
     console.log(`App listening on port ${port}!`)})
 
 module.exports = app;
+
