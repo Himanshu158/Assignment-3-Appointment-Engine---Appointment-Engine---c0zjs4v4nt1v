@@ -66,7 +66,8 @@ app.post('/api/events/:date',(req,res)=>{
 
 app.get('/api/names',(req,res)=>{
     con.query('select * from user',(err,result)=>{
-        res.status(200).json({result});
+        res.status(200)
+        res.send(result)
         //console.log(result)
     })
 })
