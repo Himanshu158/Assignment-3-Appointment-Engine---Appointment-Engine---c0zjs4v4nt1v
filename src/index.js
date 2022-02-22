@@ -22,7 +22,8 @@ app.get('/api/events/:date',(req,res)=>{
     const d=req.params.date;
     const sql=`select * from events where date="${d}"`
     con.query(sql,(err,result)=>{
-        res.status(200).json({result});
+        res.status(200);
+        res.send(result)
         //console.log(result)
     })
 })
